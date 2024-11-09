@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Traveler Dashboard</title>
+    <style>
+		* {
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		    font-family: Arial, sans-serif;
+		}
+
+		.navbar {
+		    background-color: #083759;
+		    padding: 15px 30px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: space-between;
+		    color: #ffffff;
+		    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.navbar h1 {
+		    font-size: 1.8em;
+		    color: #f7b731;
+		}
+
+		.nav-links {
+		    list-style: none;
+		    display: flex;
+		    gap: 25px;
+		}
+
+		.nav-links a {
+		    color: #ffffff;
+		    text-decoration: none;
+		    font-size: 1em;
+		    padding: 10px 15px;
+		    border-radius: 5px;
+		    transition: color 0.3s, background-color 0.3s;
+		}
+
+		.nav-links a:hover {
+		    color: #f7b731;
+		    background-color: rgba(247, 183, 49, 0.1);
+		}
+
+		.hero-section {
+		    background-image: url('https://example.com/odisha-hero.jpg');
+		    background-size: cover;
+		    background-position: center;
+		    color: #ffffff;
+		    text-align: center;
+		    padding: 100px 20px;
+		}
+
+		.hero-section h2 {
+		    font-size: 2.5em;
+		    font-weight: bold;
+		    color: #f7b731;
+		}
+
+		.hero-section p {
+		    font-size: 1.2em;
+		    margin-top: 10px;
+		}
+
+		.destinations, .services {
+		    padding: 60px 20px;
+		    text-align: center;
+		    color: #083759;
+		}
+
+		.destinations h3, .services h3 {
+		    font-size: 1.8em;
+		    color: #f7b731;
+		    margin-bottom: 15px;
+		}
+
+		.destinations p {
+		    font-size: 1em;
+		    line-height: 1.6;
+		}
+
+		.services ul {
+		    list-style-type: none;
+		    padding: 0;
+		    font-size: 1em;
+		    margin-top: 15px;
+		}
+
+		.services li {
+		    margin: 8px 0;
+		}
+
+		.footer {
+		    background-color: #083759;
+		    color: #ffffff;
+		    text-align: center;
+		    padding: 20px 0;
+		    margin-top: 50px;
+		}
+
+		.footer p {
+		    font-size: 0.9em;
+		}
+
+
+	</style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <h1>Odisha Travels</h1>
+        <ul class="nav-links">
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/packages">PACKAGES</a></li>
+            <li><a href="/my-bookings">MY BOOKINGS</a></li>
+            <li><a href="/profile">PROFILE</a></li>
+        </ul>
+    </div>
+
+    
+    
+        <h2> Hello <span th:text="${username}">User</span>!</h2>
+		<section class="hero-section" id="home">
+		    <h2>Welcome to Odisha Travels!</h2>
+		    <p>Your journey begins here. Discover the beauty of Odisha with us.</p>
+		</section>
+		<section class="services" id="services">
+		    <h3>Services Offered</h3>
+		    <ul>
+		        <li>Travel Planning</li>
+		        <li>Hotel Bookings</li>
+		        <li>Transportation Services</li>
+		        <li>Guided Tours</li>
+		    </ul>
+		</section>
+		<footer class="footer">
+		    <p>&copy; 2024 Odisha Travels. All Rights Reserved.</p>
+		</footer>
+
+	<a class="logout-button" href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home - Travel Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Light background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        h1 {
+            color: #00796b; /* Teal color for the heading */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555; /* Dark grey for better readability */
+            margin-bottom: 30px; /* Space below the paragraph */
+        }
+
+        a {
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: #ff5722; /* Vibrant orange for the button */
+            color: white; /* White text for button */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+
+        a:hover {
+            background-color: #e64a19; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Travel Management System</h1>
+    <p>Please register to continue.</p>
+    <a href="/registration">Register Now</a>
+</body>
+</html>

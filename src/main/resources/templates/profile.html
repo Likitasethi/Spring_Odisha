@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Your Profile</h2>
+    <p>Name: <span th:text="${name}"></span></p>
+    <p>Email: <span th:text="${email}"></span></p>
+
+    <form action="/profile" method="post">
+        <!-- Form for updating profile -->
+        <input type="text" name="name" value="" placeholder="Update Name" />
+        <input type="email" name="email" value="" placeholder="Update Email" />
+        <button type="submit">Update Profile</button>
+    </form>
+</body>
+</html>

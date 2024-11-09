@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Travel Packages</title>
+</head>
+<body>
+    <h2>Available Packages</h2>
+    <div th:each="package : ${packages}">
+        <h3 th:text="${package.name}"></h3>
+        <p th:text="${package.description}"></p>
+        <p th:text="'Price: ' + ${package.price}"></p>
+        <button>Book Now</button>
+    </div>
+</body>
+</html>

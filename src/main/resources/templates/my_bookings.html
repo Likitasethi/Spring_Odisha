@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+    <h2>My Bookings</h2>
+    <div th:each="booking : ${bookings}">
+        <h3 th:text="${booking.packageName}"></h3>
+        <p th:text="${booking.bookingDetails}"></p>
+        <p th:text="'Price: ' + ${booking.price}"></p>
+    </div>
+</body>
+</html>

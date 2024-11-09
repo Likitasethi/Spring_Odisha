@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+            padding-top: 30px;
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Content section styling */
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            background-color: #ff4c4c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #e13b3b;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1>Admin Dashboard</h1>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="/admin/dashboard">Dashboard</a>
+    <a href="/admin/manage-agencies">Manage Travel Agencies</a>
+    <a href="/admin/manage-travelers">Manage Travelers</a>
+    <a href="/admin/manage-packages">Manage Packages</a>
+    <a href="/admin/settings">Settings</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+    <h2>Welcome to the Admin Dashboard, <span th:text="${username}">Admin</span>!</h2>
+
+    <div class="card">
+        <h3>Overview</h3>
+        <p>As an admin, you can manage travel agencies, travelers, and packages. You also have the ability to view and update user details and package information.</p>
+    </div>
+
+    <div class="card">
+        <h3>System Statistics</h3>
+        <p><strong>Total Travel Agencies:</strong> 5</p>
+        <p><strong>Total Travelers:</strong> 120</p>
+        <p><strong>Total Bookings:</strong> 300</p>
+    </div>
+
+    <div class="card">
+        <h3>Quick Actions</h3>
+        <ul>
+            <li><a href="/admin/manage-agencies">Manage Agencies</a></li>
+            <li><a href="/admin/manage-travelers">Manage Travelers</a></li>
+            <li><a href="/admin/manage-packages">Manage Packages</a></li>
+            <li><a href="/admin/settings">Update Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Logout -->
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+</body>
+</html>
