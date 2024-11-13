@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    // Hardcoded credentials for admin and travel agency
+   
     private static final String ADMIN_USERNAME = "admin";
     private static final String ADMIN_PASSWORD = "admin123";
 
@@ -48,15 +48,15 @@ public class UserController {
     @PostMapping("/login")
     public String handleLogin(@RequestParam String username, @RequestParam String password) {
         if (!username.isEmpty() && !password.isEmpty()) {
-            // Check for admin credentials
+            
             if (ADMIN_USERNAME.equals(username) && ADMIN_PASSWORD.equals(password)) {
-                return "redirect:/admin_dashboard"; // Redirect to admin dashboard
+                return "redirect:/admin_dashboard"; 
             }
-            // Check for travel agency credentials
+            
             else if (AGENCY_USERNAME.equals(username) && AGENCY_PASSWORD.equals(password)) {
-                return "redirect:/agency_dashboard"; // Redirect to agency dashboard
+                return "redirect:/agency_dashboard"; 
             }
-            // Check for traveler credentials (if you still want to keep this)
+            
             else {
                 return "redirect:/traveler_dashboard?username=" + username; 
             }
@@ -73,12 +73,12 @@ public class UserController {
 
     @GetMapping("/admin_dashboard")
     public String showAdminDashboard(Model model) {
-        return "admin_dashboard"; // Return the view for admin dashboard
+        return "admin_dashboard"; 
     }
 
     @GetMapping("/agency_dashboard")
     public String showAgencyDashboard(Model model) {
-        return "agency_dashboard"; // Return the view for agency dashboard
+        return "agency_dashboard";
     }
 
     @GetMapping("/logout")

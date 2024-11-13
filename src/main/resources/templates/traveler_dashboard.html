@@ -3,113 +3,172 @@
 <head>
     <title>Traveler Dashboard</title>
     <style>
-		* {
-		    margin: 0;
-		    padding: 0;
-		    box-sizing: border-box;
-		    font-family: Arial, sans-serif;
-		}
-
-		.navbar {
-		    background-color: #083759;
-		    padding: 15px 30px;
-		    display: flex;
-		    align-items: center;
-		    justify-content: space-between;
-		    color: #ffffff;
-		    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-		}
-
-		.navbar h1 {
-		    font-size: 1.8em;
-		    color: #f7b731;
-		}
-
-		.nav-links {
-		    list-style: none;
-		    display: flex;
-		    gap: 25px;
-		}
-
-		.nav-links a {
-		    color: #ffffff;
-		    text-decoration: none;
-		    font-size: 1em;
-		    padding: 10px 15px;
-		    border-radius: 5px;
-		    transition: color 0.3s, background-color 0.3s;
-		}
-
-		.nav-links a:hover {
-		    color: #f7b731;
-		    background-color: rgba(247, 183, 49, 0.1);
-		}
-
-		.hero-section {
-		    background-image: url('https://example.com/odisha-hero.jpg');
-		    background-size: cover;
-		    background-position: center;
-		    color: #ffffff;
-		    text-align: center;
-		    padding: 100px 20px;
-		}
-
-		.hero-section h2 {
-		    font-size: 2.5em;
-		    font-weight: bold;
-		    color: #f7b731;
-		}
-
-		.hero-section p {
-		    font-size: 1.2em;
-		    margin-top: 10px;
-		}
-
-		.destinations, .services {
-		    padding: 60px 20px;
-		    text-align: center;
-		    color: #083759;
-		}
-
-		.destinations h3, .services h3 {
-		    font-size: 1.8em;
-		    color: #f7b731;
-		    margin-bottom: 15px;
-		}
-
-		.destinations p {
-		    font-size: 1em;
-		    line-height: 1.6;
-		}
-
-		.services ul {
-		    list-style-type: none;
-		    padding: 0;
-		    font-size: 1em;
-		    margin-top: 15px;
-		}
-
-		.services li {
-		    margin: 8px 0;
-		}
-
-		.footer {
-		    background-color: #083759;
-		    color: #ffffff;
-		    text-align: center;
-		    padding: 20px 0;
-		    margin-top: 50px;
-		}
-
-		.footer p {
-		    font-size: 0.9em;
-		}
-
-
-	</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #004d66;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        .nav-links li a:hover {
+            background-color: #003347;
+        }
+        .marquee {
+            background-color: #007399;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .hero-section {
+            background-color: #cce7ff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .hero-section h2 {
+            font-size: 32px;
+            color: #004d66;
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 18px;
+            color: #333;
+        }
+        .destinations-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .destinations-section h2 {
+            font-size: 28px;
+            color: #004d66;
+            margin-bottom: 15px;
+        }
+        .destinations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .destination-box {
+            background-color: white;
+            width: 220px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .destination-box:hover {
+            transform: translateY(-5px);
+        }
+        .destination-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .destination-box h3 {
+            font-size: 18px;
+            color: #004d66;
+            margin: 10px 0;
+        }
+        .destination-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            height: 50px;
+        }
+        .book-button {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 14px;
+            margin-top: auto;
+        }
+        .book-button:hover {
+            background-color: #c9302c;
+        }
+        .logout-button {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            align-self: center;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+        footer {
+            background-color: #004d66;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+        footer p {
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    
     <div class="navbar">
         <h1>Odisha Travels</h1>
         <ul class="nav-links">
@@ -119,27 +178,60 @@
             <li><a href="/profile">PROFILE</a></li>
         </ul>
     </div>
-
-    
-    
-        <h2> Hello <span th:text="${username}">User</span>!</h2>
-		<section class="hero-section" id="home">
-		    <h2>Welcome to Odisha Travels!</h2>
-		    <p>Your journey begins here. Discover the beauty of Odisha with us.</p>
-		</section>
-		<section class="services" id="services">
-		    <h3>Services Offered</h3>
-		    <ul>
-		        <li>Travel Planning</li>
-		        <li>Hotel Bookings</li>
-		        <li>Transportation Services</li>
-		        <li>Guided Tours</li>
-		    </ul>
-		</section>
-		<footer class="footer">
-		    <p>&copy; 2024 Odisha Travels. All Rights Reserved.</p>
-		</footer>
-
-	<a class="logout-button" href="/logout">Logout</a>
+    <div class="container">
+        <div class="marquee">
+            Welcome, <span th:text="${username}">User</span>! Ready to explore Odisha?
+        </div>
+        <div class="hero-section">
+            <h2>Welcome to Odisha Travels</h2>
+            <p>Explore the best destinations, book your travel packages, and create unforgettable memories!</p>
+        </div>
+        <div class="destinations-section">
+            <h2>Top Destinations in Odisha</h2>
+            <div class="destinations-grid">
+             
+				<div class="destination-box">
+				              <img src="chilika.jpeg">
+				              <h3>Chilika Lake</h3>
+				              <a href="/book?destination=ChilikaLake" class="book-button">Book Now</a>
+				          </div>
+				
+						   <div class="destination-box">
+						                 <img src="similpal.jpg" alt="Similipal National Park">
+						                 <h3>Similipal National Park</h3>
+						                 <a href="/book?destination=Similipal" class="book-button">Book Now</a>
+						             </div>
+									 <div class="destination-box">
+									                <img src="nandankanan.jpg" alt="Nandankanan Zoo">
+									                <h3>Nandankanan Zoo</h3>
+									                <a href="/book?destination=Nandankanan" class="book-button">Book Now</a>
+									            </div>
+									            <div class="destination-box">
+									                <img src="khandagiri.jpg" alt="Khandagiri and Udayagiri Caves">
+									                <h3>Khandagiri & Udayagiri Caves</h3>
+									                <a href="/book?destination=Khandagiri" class="book-button">Book Now</a>
+													
+									            </div>
+                <div class="destination-box">
+                    <img src="chilika.jpeg">
+                    <h3>Chilika Lake</h3>
+                    <p>Discover the biodiversity and breathtaking views of Chilika Lake.</p>
+                    <a href="/book?destination=ChilikaLake" class="book-button">Book Now</a>
+                </div>
+                <div class="destination-box">
+                    <img src="bhubaneswar.jpg" alt="Jagannath Puri Temple">
+                    <h3>Jagannath Puri Temple</h3>
+                    <p>Immerse yourself in spirituality at the famous Jagannath Temple.</p>
+                    <a href="/book?destination=Bhubaneswar" class="book-button">Book Now</a>
+                </div>
+        
+            </div>
+        </div>
+        <a class="logout-button" href="/logout">Logout</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Odisha Travels. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+

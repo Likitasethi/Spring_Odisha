@@ -1,0 +1,3 @@
+2024-11-12 19:14:14.456475+05:30 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists users alter column created_at set data type TIMESTAMP [*]DEFAULT CURRENT_TIMESTAMP"; SQL statement:
+alter table if exists users alter column created_at set data type TIMESTAMP DEFAULT CURRENT_TIMESTAMP [42000-224]

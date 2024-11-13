@@ -1,62 +1,41 @@
 package com.example.travelPlan.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.time.LocalDate;
+
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "bookings")
 public class Booking {
-    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-generate IDs
-    private Long id;  // This is the unique identifier for the booking
-    
-    private String packageName;
-    private String bookingDate;
-    private double price;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    // Constructor
-    public Booking(String packageName, String bookingDate, double price) {
-        this.packageName = packageName;
-        this.bookingDate = bookingDate;
-        this.price = price;
-    }
+    @ManyToOne
+    @JoinColumn(name = "user_id") // Matches the column in the database
+    private User user; // Reference to the User entity
 
-    // Default constructor (required for JPA)
-    public Booking() {}
+    private String destination;
+    private LocalDate bookingDate;
+    private LocalDate travelDate;
+    private String status;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+    // Getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 
-    public String getPackageName() {
-        return packageName;
-    }
+    public String getDestination() { return destination; }
+    public void setDestination(String destination) { this.destination = destination; }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
+    public LocalDate getBookingDate() { return bookingDate; }
+    public void setBookingDate(LocalDate bookingDate) { this.bookingDate = bookingDate; }
 
-    public String getBookingDate() {
-        return bookingDate;
-    }
+    public LocalDate getTravelDate() { return travelDate; }
+    public void setTravelDate(LocalDate travelDate) { this.travelDate = travelDate; }
 
-    public void setBookingDate(String bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
-

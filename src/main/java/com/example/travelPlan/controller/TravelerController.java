@@ -37,24 +37,30 @@ public class TravelerController {
 
 
     
-    @GetMapping("/my_bookings")
+    @GetMapping("/my-bookings")
     public String showMyBookingsPage(Model model) {
        
         List<Booking> bookings = new ArrayList<>();
         bookings.add(new Booking());
         model.addAttribute("bookings", bookings);
-        return "my_bookings";  
+        return "my-bookings";  
     }
 
     
     @GetMapping("/profile")
     public String showProfilePage(Model model) {
-       
         model.addAttribute("name", "John Doe");
         model.addAttribute("email", "john.doe@example.com");
         return "profile"; 
     }
 
+    @PostMapping("/profile")
+    public String updateProfile(@RequestParam String name, @RequestParam String email, Model model) {
+        // Process the updated profile information here (e.g., save to database)
+        model.addAttribute("name", name);
+        model.addAttribute("email", email);
+        return "profile"; // Redirects back to the profile page
+    }
     
     @GetMapping("/logout")
     public String logout() {

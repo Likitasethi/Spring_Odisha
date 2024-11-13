@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Bookings</title>
+</head>
+<body>
+    <h1>My Bookings</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Booking Date</th>
+                <th>Travel Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="booking : ${bookings}">
+                <td th:text="${booking.destination}"></td>
+                <td th:text="${booking.bookingDate}"></td>
+                <td th:text="${booking.travelDate}"></td>
+                <td th:text="${booking.status}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

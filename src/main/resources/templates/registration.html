@@ -3,82 +3,159 @@
 <head>
     <title>Registration</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f4f8; /* Light background color */
+      
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFF6E3; 
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
+            color: #333;
         }
 
         .container {
-            background-color: white; /* White background for the form */
-            padding: 30px;
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            width: 300px; /* Fixed width for the form */
+            background-color: #FFF;
+            border-radius: 12px;
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 380px; /* Smaller Form */
+            padding: 20px;
         }
 
-        h1 {
-            color: #00796b; /* Teal color for the heading */
-            text-align: center; /* Center the heading */
-            margin-bottom: 20px; /* Space below the heading */
+        h2 {
+            text-align: center;
+            color: #BFECFF; /* Light Blue */
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4B4B4B;
+            margin-bottom: 8px;
+            display: block;
         }
 
         input[type="text"],
-        input[type="password"] {
-            width: 100%; /* Full width inputs */
-            padding: 10px; /* Padding inside inputs */
-            margin-bottom: 15px; /* Space below each input */
-            border: 1px solid #ccc; /* Light grey border */
-            border-radius: 5px; /* Rounded corners for inputs */
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #CDC1FF; 
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #FFCCEA; 
+            box-shadow: 0 0 8px rgba(255, 204, 234, 0.5);
         }
 
         input[type="submit"] {
-            background-color: #ff5722; /* Vibrant orange for the button */
-            color: white; /* White text for button */
-            border: none; /* No border */
-            padding: 12px; /* Padding inside the button */
-            border-radius: 5px; /* Rounded corners for button */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            background-color: #BFECFF; 
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            padding: 12px 0;
         }
 
         input[type="submit"]:hover {
-            background-color: #e64a19; /* Darker shade on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
+            background-color: #CDC1FF; /* Lavender */
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            background-color: #BFECFF;
+            transform: translateY(0);
         }
 
         p {
-            text-align: center; /* Center align paragraph text */
+            text-align: center;
+            font-size: 14px;
+            color: #4B4B4B;
         }
 
-        a {
-            color: #00796b; /* Teal color for links */
-            text-decoration: none; /* Remove underline from links */
+        p a {
+            color: #FFCCEA;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline; /* Underline on hover for links */
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 450px) {
+            .container {
+                padding: 18px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Registration</h1>
-        <form th:action="@{/register}" method="post">
-            <div>
-                <input type="text" name="username" placeholder="Username" required/>
+        <h2>Register</h2>
+        <form th:action="@{/register}" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
             </div>
-            <div>
-                <input type="password" name="password" placeholder="Password" required/>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
             </div>
-            <input type="submit" value="Register"/>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Choose a username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Create a password">
+            </div>
+
+       
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Register"/>
+            </div>
         </form>
+
         <p>Already have an account? <a href="/login">Login here</a></p>
     </div>
+
 </body>
 </html>
